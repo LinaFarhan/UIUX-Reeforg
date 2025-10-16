@@ -1,0 +1,1207 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - مؤسسة ريف للتنمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #4a9f6a;
+            --light-green: #e8f5e9;
+            --dark-green: #2d6a4f;
+            --beige: #f5f1e6;
+            --light-beige: #faf9f5;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-beige);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-green);
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-green);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(74, 159, 106, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(74, 159, 106, 0.3);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark-green);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .language-switcher {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .lang-btn:first-child {
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .lang-btn:last-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(45, 106, 79, 0.7), rgba(45, 106, 79, 0.5)), url('https://images.unsplash.com/photo-1551524164-6ca88f76f7cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .bg-light {
+            background-color: var(--light-beige);
+        }
+
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        /* Story Section */
+        .story-section {
+            position: relative;
+        }
+
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .value-card:hover .value-icon {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .value-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .mission-card, .vision-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card:before, .vision-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-green);
+        }
+
+        .mission-icon, .vision-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        /* Objectives */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .objective-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .objective-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            width: 2px;
+            background-color: var(--primary-green);
+            transform: translateX(50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            right: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            right: 50%;
+        }
+
+        .timeline-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:after {
+            right: -10px;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 3px var(--primary-green);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: -10px;
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-photo {
+            height: 200px;
+            background-color: var(--light-green);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: var(--primary-green);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-right: 5px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            margin-top: 3px;
+        }
+
+        .contact-info span {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #3d8a58;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .story-content {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                right: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                right: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                right: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:after,
+            .timeline-item:nth-child(even) .timeline-content:after {
+                right: -10px;
+                left: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .about-hero {
+                padding: 80px 0;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                margin-right: 0;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="logo-text">مؤسسة ريف للتنمية</div>
+            </a>
+            
+            <div class="nav-container">
+                <div class="language-switcher">
+                    <button class="lang-btn active">العربية</button>
+                    <button class="lang-btn">English</button>
+                </div>
+                
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html" class="active">من نحن</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="get-involved.html">شارك معنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="fade-in">قصتنا وتأثيرنا</h1>
+            <p class="fade-in delay-1">لأكثر من عقد من الزمن، كرسنا أنفسنا لتحويل المجتمعات الريفية من خلال التنمية المستدامة والتمكين والتعاون.</p>
+            <a href="#story" class="btn fade-in delay-2">اكتشف رحلتنا</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">قصتنا</h2>
+            <div class="story-content">
+                <div class="story-text fade-in">
+                    <p>تأسست مؤسسة ريف للتنمية في عام 2010 من رؤية بسيطة لكنها قوية: خلق تغيير دائم في المجتمعات الريفية التي تم تجاهلها لفترة طويلة. بدأت رحلتنا في القرى النائية بمنطقة الريف، حيث شاهدنا عن كثب التحديات التي تواجهها المجتمعات التي تفتقر إلى الوصول للضروريات الأساسية.</p>
+                    <p>ما بدأ كمبادرة صغيرة لتوفير المياه النظيفة تطور ليصبح منظمة تنموية شاملة تعالج التعليم والرعاية الصحية والتمكين الاقتصادي والاستدامة البيئية. كان نهجنا دائماً بقيادة المجتمع، مما يضمن أن الحلول لا تُنفذ فقط من أجل المجتمعات، ولكن معها.</p>
+                    <p>اليوم، نعمل في 25 مجتمعاً ريفياً، مؤثرين على أكثر من 50,000 حياة من خلال برامجنا المختلفة. ينبع نجاحنا من التزامنا بالشفافية والشراكات المحلية والحلول المستدامة التي تمكن المجتمعات من تشكيل مستقبلها الخاص.</p>
+                </div>
+                <div class="story-image fade-in delay-1">
+                    <img src="https://images.unsplash.com/photo-1551524164-6ca88f76f7cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="تجمع مجتمعي">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">هدفنا</h2>
+            <div class="mission-vision">
+                <div class="mission-card fade-in">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>رسالتنا</h3>
+                    <p>تمكين المجتمعات الريفية من خلال مبادرات التنمية المستدامة التي تعالج التعليم والرعاية الصحية والفرص الاقتصادية والحفاظ على البيئة، وتعزيز الاعتماد على الذات وتحسين جودة الحياة.</p>
+                </div>
+                <div class="vision-card fade-in delay-1">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>رؤيتنا</h3>
+                    <p>عالم تزدهر فيه كل مجتمع ريفي مع الوصول إلى التعليم الجيد والرعاية الصحية والفرص الاقتصادية والبيئة المستدامة، والحفاظ على التراث الثقافي مع احتضان التقدم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">قيمنا</h2>
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>الشراكة المجتمعية</h3>
+                    <p>نؤمن بالعمل مع المجتمعات، وليس من أجلهم. يتم تصميم مشاريعنا بالشراكة مع أصحاب المصلحة المحليين لضمان الملاءمة والاستدامة.</p>
+                </div>
+                <div class="value-card fade-in delay-1">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>الاستدامة</h3>
+                    <p>تم تصميم مبادراتنا للتأثير طويل الأمد، مع تحقيق التوازن بين المسؤولية البيئية واحتياجات التنمية المجتمعية.</p>
+                </div>
+                <div class="value-card fade-in delay-2">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>الشفافية</h3>
+                    <p>نحافظ على التواصل المفتوح مع أصحاب المصلحة ونقدم تقارير منتظمة عن تقدمنا وتحدياتنا وإدارة مواردنا المالية.</p>
+                </div>
+                <div class="value-card fade-in delay-3">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>التعاطف</h3>
+                    <p>نقترب من عملنا باحترام عميق للثقافات المحلية والتزام حقيقي بفهم احتياجات المجتمع.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">أهدافنا الاستراتيجية</h2>
+            <div class="objectives-grid">
+                <div class="objective-card fade-in">
+                    <div class="objective-number">١</div>
+                    <h3>الوصول إلى التعليم</h3>
+                    <p>زيادة معدلات الالتحاق بالمدارس ومحو الأمية بنسبة 40٪ في مجتمعاتنا المستهدفة من خلال تطوير البنية التحتية وتدريب المعلمين.</p>
+                </div>
+                <div class="objective-card fade-in delay-1">
+                    <div class="objective-number">٢</div>
+                    <h3>تحسين الرعاية الصحية</h3>
+                    <p>خفض الأمراض التي يمكن الوقاية منها بنسبة 50٪ من خلال مبادرات المياه النظيفة ومرافق الصرف الصحي والتوعية الصحية المجتمعية.</p>
+                </div>
+                <div class="objective-card fade-in delay-2">
+                    <div class="objective-number">٣</div>
+                    <h3>التمكين الاقتصادي</h3>
+                    <p>خلق فرص معيشية مستدامة لـ 5,000 أسرة من خلال التدريب على المهارات ودعم المشاريع الصغيرة.</p>
+                </div>
+                <div class="objective-card fade-in delay-3">
+                    <div class="objective-number">٤</div>
+                    <h3>الحفاظ على البيئة</h3>
+                    <p>تعزيز الممارسات الزراعية المستدامة وإعادة التحريج لحماية الموارد الطبيعية للأجيال القادمة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">رحلتنا</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">٢٠١٠</div>
+                        <h3>تأسيس المؤسسة</h3>
+                        <p>تم تسجيل مؤسسة ريف للتنمية رسمياً مع التركيز على مشاريع المياه والصرف الصحي في ثلاث قرى ريفية.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">٢٠١٣</div>
+                        <h3>إطلاق مبادرة التعليم</h3>
+                        <p>توسيع عملنا ليشمل التعليم، وبناء مدرستنا الأولى وإطلاق برامج محو الأمية للكبار.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">٢٠١٦</div>
+                        <h3>التقدير والنمو</h3>
+                        <p>حصلنا على جائزة الاستدامة الوطنية وقمنا بتوسيع عملياتنا إلى 15 مجتمعاً في جميع أنحاء المنطقة.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">٢٠١٩</div>
+                        <h3>برنامج التمكين الاقتصادي</h3>
+                        <p>أطلقنا برنامج التمكين الاقتصادي الرئيسي، وتوفير التدريب المهني ودعم التمويل الأصغر.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">٢٠٢٢</div>
+                        <h3>مبادرة محو الأمية الرقمية</h3>
+                        <p>قدمنا برامج محو الأمية الرقمية لسد الفجوة التكنولوجية في المجتمعات الريفية.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">٢٠٢٣</div>
+                        <h3>شهادة الاستدامة</h3>
+                        <p>حققنا الشهادة الدولية لنموذجنا في التنمية المجتمعية المستدامة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Grid Section -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">عملنا في الميدان</h2>
+            <div class="photo-grid">
+                <div class="photo-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="مشروع المياه النظيفة">
+                    <div class="photo-overlay">
+                        <h4>مبادرة المياه النظيفة</h4>
+                    </div>
+                </div>
+                <div class="photo-item fade-in delay-1">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="برنامج التعليم">
+                    <div class="photo-overlay">
+                        <h4>التعليم للجميع</h4>
+                    </div>
+                </div>
+                <div class="photo-item fade-in delay-2">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="تدريب زراعي">
+                    <div class="photo-overlay">
+                        <h4>الزراعة المستدامة</h4>
+                    </div>
+                </div>
+                <div class="photo-item fade-in delay-3">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="اجتماع مجتمعي">
+                    <div class="photo-overlay">
+                        <h4>المشاركة المجتمعية</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">فريق القيادة</h2>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')"></div>
+                    <div class="member-info">
+                        <h3>د. أمينة العلمي</h3>
+                        <p class="member-role">المديرة التنفيذية</p>
+                        <p>مع أكثر من 15 عاماً في التنمية المجتمعية، تقود د. العلمي رؤيتنا الاستراتيجية وشراكاتنا.</p>
+                    </div>
+                </div>
+                <div class="team-member fade-in delay-1">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"></div>
+                    <div class="member-info">
+                        <h3>كريم بنجلون</h3>
+                        <p class="member-role">مدير البرامج</p>
+                        <p>يشرف كريم على تنفيذ جميع برامجنا الميدانية ومبادرات المشاركة المجتمعية.</p>
+                    </div>
+                </div>
+                <div class="team-member fade-in delay-2">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80')"></div>
+                    <div class="member-info">
+                        <h3>فاطمة الزهراء</h3>
+                        <p class="member-role">مديرة الشؤون المالية</p>
+                        <p>تضمن فاطمة الشفافية المالية وتدير مواردنا لتحقيق أقصى تأثير مجتمعي.</p>
+                    </div>
+                </div>
+                <div class="team-member fade-in delay-3">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')"></div>
+                    <div class="member-info">
+                        <h3>يوسف الإدريسي</h3>
+                        <p class="member-role">مدير العمليات الميدانية</p>
+                        <p>يوسف ينشط أنشطتنا على الأرض ويحافظ على العلاقات مع قادة المجتمع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مؤسسة ريف للتنمية</h3>
+                    <p>نعمل نحو التنمية المستدامة وتمكين المجتمعات الريفية من خلال التعليم والبنية التحتية والفرص الاقتصادية.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="projects.html">مشاريعنا</a></li>
+                        <li><a href="get-involved.html">شارك معنا</a></li>
+                        <li><a href="news.html">الأخبار والتحديثات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>معلومات الاتصال</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>شارع الاستدامة 123،<br>المدينة الخضراء، 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@rifdevelopment.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>النشرة الإخبارية</h3>
+                    <p>اشترك في نشرتنا الإخبارية لتلقي التحديثات حول مشاريعنا وتأثيرنا.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني" required>
+                        <button type="submit">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 مؤسسة ريف للتنمية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Language switcher
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        };
+        
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(30px)";
+            element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Initial check
+        fadeInOnScroll();
+    </script>
+</body>
+</html>
