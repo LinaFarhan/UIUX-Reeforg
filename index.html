@@ -136,18 +136,27 @@
             text-decoration: none;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 10px;
-            color: var(--white);
-            font-size: 1.2rem;
-        }
+       .logo-icon {
+    width: 40px;              /* عرض الأيقونة */
+    height: 40px;             /* ارتفاع الأيقونة */
+    background-color: var(--primary-green);
+    border-radius: 50%;       /* يجعلها دائرية */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    color: var(--white);
+    font-size: 20px;          /* حجم الأيقونة الداخلية (مثل أيقونة font awesome) */
+    cursor: pointer;          /* شكل المؤشر عند المرور */
+    transition: all 0.3s ease; /* تأثير سلس عند التفاعل */
+}
+
+/* تأثير عند المرور بالماوس */
+.logo-icon:hover {
+    background-color: var(--primary-green-dark);
+    transform: scale(1.1);
+}
+
 
         .logo-text {
             font-family: 'El Messiri', sans-serif;
@@ -723,7 +732,8 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-seedling"></i>
+                   <img src="logo.png"/>
+                     
                 </div>
                 <div class="logo-text">مؤسسة ريف للتنمية</div>
             </a>
@@ -739,12 +749,12 @@
                 </div>
                 
                 <ul class="nav-menu">
-                    <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#">من نحن</a></li>
-                    <li><a href="#">مشاريعنا</a></li>
-                    <li><a href="#">شارك معنا</a></li>
-                    <li><a href="#">الأخبار</a></li>
-                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html" class="active">من نحن</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="get-involved.html">شارك معنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
                 </ul>
             </div>
         </div>
