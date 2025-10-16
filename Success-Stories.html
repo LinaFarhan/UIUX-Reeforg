@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قصص النجاح - مؤسسة ريف للتنمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #4a9f6a;
+            --light-green: #e8f5e9;
+            --dark-green: #2d6a4f;
+            --beige: #f5f1e6;
+            --light-beige: #faf9f5;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-radius: 16px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-beige);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-green);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(74, 159, 106, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(74, 159, 106, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+
+        .logo-text {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--dark-green);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        .nav-menu li {
+            margin-left: 28px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .language-switcher {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 7px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .lang-btn:first-child {
+            border-left: none;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .lang-btn:last-child {
+            border-radius: 6px 0 0 6px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .stories-hero {
+            background: linear-gradient(rgba(45, 106, 79, 0.75), rgba(45, 106, 79, 0.6)), url('https://images.unsplash.com/photo-1551524164-6ca88f76f7cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .stories-hero h1 {
+            color: var(--white);
+            margin-bottom: 1.8rem;
+            font-size: 3.2rem;
+        }
+
+        .stories-hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .bg-light {
+            background-color: var(--light-beige);
+        }
+
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        /* Stories Grid */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 35px;
+        }
+
+        .story-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .story-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-image {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .story-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+            color: var(--white);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .story-card:hover .story-overlay {
+            opacity: 1;
+        }
+
+        .story-type {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .story-content {
+            padding: 28px;
+        }
+
+        .story-content h3 {
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+        }
+
+        .story-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .story-location i {
+            margin-left: 6px;
+            color: var(--primary-green);
+        }
+
+        .story-quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .story-quote:before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 0;
+            font-size: 3rem;
+            color: var(--light-green);
+            line-height: 1;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .video-section h2 {
+            color: var(--white);
+        }
+
+        .video-section h2:after {
+            background-color: var(--white);
+        }
+
+        .video-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-placeholder {
+            height: 450px;
+            background-color: var(--light-beige);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .video-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--primary-green);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .play-button:hover {
+            background-color: var(--white);
+            transform: translate(50%, -50%) scale(1.1);
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Story Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .story-modal {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .story-modal {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary-green);
+        }
+
+        .modal-header {
+            padding: 30px 30px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .modal-title {
+            margin-bottom: 10px;
+        }
+
+        .modal-subtitle {
+            display: flex;
+            gap: 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .modal-content {
+            padding: 30px;
+        }
+
+        .story-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-label {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .story-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .story-text {
+            margin-bottom: 25px;
+        }
+
+        .impact-metrics {
+            background-color: var(--light-beige);
+            border-radius: var(--border-radius);
+            padding: 25px;
+        }
+
+        .impact-metrics h3 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .metric-item:last-child {
+            border-bottom: none;
+        }
+
+        .metric-value {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 70px 0 35px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-right: 5px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            margin-top: 3px;
+        }
+
+        .contact-info span {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 12px;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .story-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .stories-hero {
+                padding: 80px 0;
+            }
+            
+            .stories-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 75px;
+                right: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                margin-right: 0;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 12px 0;
+                margin-left: 0;
+            }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .story-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .modal-header {
+                padding: 20px 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="logo-text">مؤسسة ريف للتنمية</div>
+            </a>
+            
+            <div class="nav-container">
+                <div class="language-switcher">
+                    <button class="lang-btn active">العربية</button>
+                    <button class="lang-btn">English</button>
+                </div>
+                
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="projects.html">المشاريع والبرامج</a></li>
+                    <li><a href="stories.html" class="active">قصص النجاح</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="stories-hero">
+        <div class="container">
+            <h1 class="fade-in">قصص تلامس القلب</h1>
+            <p class="fade-in delay-1">اكتشفوا قصص التحول الحقيقية التي صنعها أفراد ومجتمعات بفضل دعمكم وشراكتكم مع مؤسسة ريف للتنمية</p>
+            <a href="#stories" class="btn fade-in delay-2">اكتشف القصص</a>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">قصص النجاح</h2>
+            <div class="stories-grid">
+                <!-- Story 1 -->
+                <div class="story-card" data-story="1">
+                    <div class="story-image" style="background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80')">
+                        <div class="story-overlay">
+                            <a href="#" class="btn btn-outline">اقرأ القصة الكاملة</a>
+                        </div>
+                        <span class="story-type">مشروع المياه</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>أمينة</h3>
+                        <div class="story-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>قرية تيفنوت، المنطقة الشمالية</span>
+                        </div>
+                        <p class="story-quote">"لم أعد أسير لساعات لجلب الماء. الآن أستطيع التركيز على تعليم أطفالي وتنمية مهاراتي."</p>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="story-card" data-story="2">
+                    <div class="story-image" style="background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <div class="story-overlay">
+                            <a href="#" class="btn btn-outline">اقرأ القصة الكاملة</a>
+                        </div>
+                        <span class="story-type">الزراعة المستدامة</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>حسن</h3>
+                        <div class="story-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>قرية أزرار، المنطقة الشرقية</span>
+                        </div>
+                        <p class="story-quote">"بفضل التدريب الزراعي، تضاعف إنتاجي ثلاث مرات وأصبحت قادراً على إعالة أسرتي بشكل أفضل."</p>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="story-card" data-story="3">
+                    <div class="story-image" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <div class="story-overlay">
+                            <a href="#" class="btn btn-outline">اقرأ القصة الكاملة</a>
+                        </div>
+                        <span class="story-type">التعليم</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>فاطمة</h3>
+                        <div class="story-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>قرية أملال، المنطقة الجنوبية</span>
+                        </div>
+                        <p class="story-quote">"كنت أحلم بالتعليم منذ طفولتي. اليوم، بفضل المدرسة الجديدة، أصبحت أول معلمة في قريتي."</p>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Story 4 -->
+                <div class="story-card" data-story="4">
+                    <div class="story-image" style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <div class="story-overlay">
+                            <a href="#" class="btn btn-outline">اقرأ القصة الكاملة</a>
+                        </div>
+                        <span class="story-type">التمكين الاقتصادي</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>يوسف</h3>
+                        <div class="story-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>قرية تازارين، المنطقة الغربية</span>
+                        </div>
+                        <p class="story-quote">"من خلال مشروع تربية النحل، استطعت تحويل هوايتي إلى مصدر دخل مستدام لعائلتي."</p>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Story 5 -->
+                <div class="story-card" data-story="5">
+                    <div class="story-image" style="background-image: url('https://images.unsplash.com/photo-1551524164-6ca88f76f7cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <div class="story-overlay">
+                            <a href="#" class="btn btn-outline">اقرأ القصة الكاملة</a>
+                        </div>
+                        <span class="story-type">الصحة</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>خديجة</h3>
+                        <div class="story-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>قرية إمليل، المنطقة الوسطى</span>
+                        </div>
+                        <p class="story-quote">"بفضل العيادة المتنقلة، أصبح بإمكاني متابعة حملي بشكل آمن دون السفر لمسافات طويلة."</p>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Story 6 -->
+                <div class="story-card" data-story="6">
+                    <div class="story-image" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
+                        <div class="story-overlay">
+                            <a href="#" class="btn btn-outline">اقرأ القصة الكاملة</a>
+                        </div>
+                        <span class="story-type">التعليم</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>سارة</h3>
+                        <div class="story-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>قرية تينزرت، المنطقة الشمالية</span>
+                        </div>
+                        <p class="story-quote">"كنت أول فتاة في قريتي تكمل تعليمها الثانوي. اليوم أدرس الطب وأحلم بأن أصبح طبيبة لقريتي."</p>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="fade-in">شهادات حية</h2>
+            <p class="fade-in delay-1">استمعوا إلى قصص النجاح مباشرة من أصحابها</p>
+            
+            <div class="video-container fade-in delay-2">
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>شهادة حسن: من مزارع تقليدي إلى رائد أعمال زراعي</h3>
+                    <p>شاهد كيف غير برنامج الزراعة المستدامة حياة حسن وعائلته</p>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">تأثيرنا من خلال الأرقام</h2>
+            <div class="impact-stats">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">5,247</div>
+                    <div class="stat-label">مستفيد مباشر</div>
+                </div>
+                <div class="stat-card fade-in delay-1">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">قرية مستفيدة</div>
+                </div>
+                <div class="stat-card fade-in delay-2">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-number">1,853</div>
+                    <div class="stat-label">طفل في المدارس</div>
+                </div>
+                <div class="stat-card fade-in delay-3">
+                    <div class="stat-icon">
+                        <i class="fas fa-hand-holding-water"></i>
+                    </div>
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">مشروع مياه منفذ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Modal -->
+    <div class="modal-overlay" id="storyModal">
+        <div class="story-modal">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <h2 class="modal-title">أمينة: قصة تحول بفضل مياه نظيفة</h2>
+                <div class="modal-subtitle">
+                    <span><i class="fas fa-map-marker-alt"></i> قرية تيفنوت، المنطقة الشمالية</span>
+                    <span><i class="fas fa-calendar-alt"></i> تم التنفيذ: يونيو 2022</span>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="story-images">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="قبل المشروع">
+                        <div class="image-label">قبل: النساء يجلبن الماء من مصدر بعيد</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="بعد المشروع">
+                        <div class="image-label">بعد: أمينة تستخدم مضخة المياه الجديدة</div>
+                    </div>
+                </div>
+                
+                <div class="story-details">
+                    <div class="story-text">
+                        <h3>القصة الكاملة</h3>
+                        <p>أمينة، أم لثلاثة أطفال، كانت تقضي ساعات كل يوم في السير لمسافة 5 كيلومترات لجلب الماء من المصدر الوحيد في المنطقة. لم يكن الماء نظيفاً دائماً، مما تسبب في مشاكل صحية متكررة لأسرتها.</p>
+                        <p>بفضل مشروع المياه النظيفة الذي نفذته مؤسسة ريف للتنمية، تغيرت حياة أمينة وعائلتها بالكامل. تم حفر بئر جديد وتركيب نظام تنقية، مما وفر مياهاً نظيفة وآمنة على بعد دقائق فقط من منزلها.</p>
+                        <p>تقول أمينة: "لم أعد أسير لساعات في الحر والبرد لجلب الماء. الآن أستطيع التركيز على رعاية أطفالي وتعليمهم. ابنتي الكبرى لم تعد تتغيب عن المدرسة لمساعدتي في جلب الماء. صحتنا تحسنت كثيراً ولم نعد نعاني من الأمراض المنقولة بالمياه."</p>
+                        <p>اليوم، تستخدم أمينة الوقت الذي كانت تقضيه في جلب الماء في تعلم الخياطة وتطوير مهاراتها، مما يمنحها فرصة لتحسين دخل أسرتها.</p>
+                    </div>
+                    
+                    <div class="impact-metrics">
+                        <h3>تأثير المشروع</h3>
+                        <div class="metric-item">
+                            <span>الوقت المُوفر</span>
+                            <span class="metric-value">15 ساعة/أسبوع</span>
+                        </div>
+                        <div class="metric-item">
+                            <span>انخفاض الأمراض</span>
+                            <span class="metric-value">70%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span>الحضور المدرسي</span>
+                            <span class="metric-value">+40%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span>المستفيدين المباشرين</span>
+                            <span class="metric-value">150 شخص</span>
+                        </div>
+                        <div class="metric-item">
+                            <span>جودة المياه</span>
+                            <span class="metric-value">100% آمنة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مؤسسة ريف للتنمية</h3>
+                    <p>نعمل نحو التنمية المستدامة وتمكين المجتمعات الريفية من خلال التعليم والبنية التحتية والفرص الاقتصادية.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="projects.html">المشاريع والبرامج</a></li>
+                        <li><a href="stories.html">قصص النجاح</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>معلومات الاتصال</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>شارع الاستدامة 123،<br>المدينة الخضراء، 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+212 5 00 00 00 00</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@rifdevelopment.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 مؤسسة ريف للتنمية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Language switcher
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Story card animations on scroll
+        const storyCards = document.querySelectorAll('.story-card');
+        
+        const checkVisibility = () => {
+            storyCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.classList.add('visible');
+                }
+            });
+        };
+        
+        // Set initial state
+        storyCards.forEach(card => {
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', checkVisibility);
+        // Initial check
+        checkVisibility();
+
+        // Modal functionality
+        const modal = document.getElementById('storyModal');
+        const modalClose = document.getElementById('modalClose');
+        const storyLinks = document.querySelectorAll('.story-card .btn-small, .story-overlay .btn');
+        
+        storyLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        modalClose.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Video play button
+        const playButton = document.querySelector('.play-button');
+        playButton.addEventListener('click', function() {
+            alert('سيتم تشغيل الفيديو في النسخة الكاملة من الموقع');
+        });
+
+        // Fade in animation on scroll for other elements
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        };
+        
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(30px)";
+            element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Initial check
+        fadeInOnScroll();
+    </script>
+</body>
+</html>
