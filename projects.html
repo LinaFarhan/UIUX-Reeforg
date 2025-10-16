@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشاريع والبرامج - مؤسسة ريف للتنمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-green: #4a9f6a;
+            --light-green: #e8f5e9;
+            --dark-green: #2d6a4f;
+            --beige: #f5f1e6;
+            --light-beige: #faf9f5;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-beige);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-green);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-green);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(74, 159, 106, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(74, 159, 106, 0.3);
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark-green);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .language-switcher {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .lang-btn:first-child {
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .lang-btn:last-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .projects-hero {
+            background: linear-gradient(rgba(45, 106, 79, 0.7), rgba(45, 106, 79, 0.5)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .projects-hero h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .projects-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .bg-light {
+            background-color: var(--light-beige);
+        }
+
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        /* Filters Section */
+        .filters-section {
+            background-color: var(--white);
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .filters-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .filter-group select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--white);
+            min-width: 150px;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .project-status {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-status.completed {
+            background-color: var(--dark-green);
+        }
+
+        .project-status.planning {
+            background-color: #ffa726;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .project-region {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-region i {
+            margin-left: 5px;
+            color: var(--primary-green);
+        }
+
+        .progress-container {
+            margin: 15px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: var(--light-green);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-green);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .chart-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .chart-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-right: 5px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            margin-top: 3px;
+        }
+
+        .contact-info span {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #3d8a58;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .projects-hero {
+                padding: 70px 0;
+            }
+            
+            .projects-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                margin-right: 0;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                min-width: 100%;
+            }
+            
+            .filter-options {
+                justify-content: space-between;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-options {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .filter-group {
+                width: 100%;
+            }
+            
+            .filter-group select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="logo-text">مؤسسة ريف للتنمية</div>
+            </a>
+            
+            <div class="nav-container">
+                <div class="language-switcher">
+                    <button class="lang-btn active">العربية</button>
+                    <button class="lang-btn">English</button>
+                </div>
+                
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="projects.html" class="active">المشاريع والبرامج</a></li>
+                    <li><a href="get-involved.html">شارك معنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <h1 class="fade-in">مشاريعنا وبرامجنا</h1>
+            <p class="fade-in delay-1">اكتشف مبادراتنا التنموية التي تحول حياة المجتمعات الريفية وتخلق تأثيراً مستداماً</p>
+            <a href="#projects" class="btn fade-in delay-2">استكشف المشاريع</a>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" placeholder="ابحث عن مشروع...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="region">المنطقة</label>
+                        <select id="region">
+                            <option value="all">جميع المناطق</option>
+                            <option value="north">المنطقة الشمالية</option>
+                            <option value="south">المنطقة الجنوبية</option>
+                            <option value="east">المنطقة الشرقية</option>
+                            <option value="west">المنطقة الغربية</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sector">القطاع</label>
+                        <select id="sector">
+                            <option value="all">جميع القطاعات</option>
+                            <option value="education">التعليم</option>
+                            <option value="health">الصحة</option>
+                            <option value="water">المياه</option>
+                            <option value="agriculture">الزراعة</option>
+                            <option value="economic">التمكين الاقتصادي</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="status">الحالة</label>
+                        <select id="status">
+                            <option value="all">جميع الحالات</option>
+                            <option value="active">قيد التنفيذ</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="planning">قيد التخطيط</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">مشاريعنا التنموية</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <span class="project-status completed">مكتمل</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>مبادرة المياه النظيفة</h3>
+                        <div class="project-meta">
+                            <span class="project-region"><i class="fas fa-map-marker-alt"></i> المنطقة الشمالية</span>
+                            <span>المياه</span>
+                        </div>
+                        <p>توفير مياه شرب آمنة من خلال بناء آبار وأنظمة تنقية في 12 قرية نائية.</p>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>التقدم</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in delay-1">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <span class="project-status">قيد التنفيذ</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>التعليم للجميع</h3>
+                        <div class="project-meta">
+                            <span class="project-region"><i class="fas fa-map-marker-alt"></i> المنطقة الجنوبية</span>
+                            <span>التعليم</span>
+                        </div>
+                        <p>بناء مدارس وتوفير مواد تعليمية وتحسين جودة التعليم في المناطق الريفية.</p>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>التقدم</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in delay-2">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <span class="project-status">قيد التنفيذ</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>الزراعة المستدامة</h3>
+                        <div class="project-meta">
+                            <span class="project-region"><i class="fas fa-map-marker-alt"></i> المنطقة الشرقية</span>
+                            <span>الزراعة</span>
+                        </div>
+                        <p>تدريب المزارعين على تقنيات الزراعة المستدامة لتحسين الإنتاجية والأمن الغذائي.</p>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>التقدم</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card fade-in delay-3">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551524164-6ca88f76f7cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                        <span class="project-status planning">قيد التخطيط</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>التمكين الاقتصادي للمرأة</h3>
+                        <div class="project-meta">
+                            <span class="project-region"><i class="fas fa-map-marker-alt"></i> المنطقة الغربية</span>
+                            <span>التمكين الاقتصادي</span>
+                        </div>
+                        <p>تمكين المرأة الريفية من خلال برامج التدريب المهني وتمويل المشاريع الصغيرة.</p>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>التقدم</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">اقرأ المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">تأثيرنا</h2>
+            
+            <div class="impact-stats">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">مستفيد مباشر</div>
+                </div>
+                <div class="stat-card fade-in delay-1">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">مجتمع ريفي</div>
+                </div>
+                <div class="stat-card fade-in delay-2">
+                    <div class="stat-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">مشروع منفذ</div>
+                </div>
+                <div class="stat-card fade-in delay-3">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">شريك استراتيجي</div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card fade-in">
+                    <h3 class="chart-title">توزيع المشاريع حسب القطاع</h3>
+                    <div class="chart-container">
+                        <canvas id="sectorChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card fade-in delay-1">
+                    <h3 class="chart-title">التقدم في تنفيذ المشاريع</h3>
+                    <div class="chart-container">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مؤسسة ريف للتنمية</h3>
+                    <p>نعمل نحو التنمية المستدامة وتمكين المجتمعات الريفية من خلال التعليم والبنية التحتية والفرص الاقتصادية.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="projects.html">المشاريع والبرامج</a></li>
+                        <li><a href="get-involved.html">شارك معنا</a></li>
+                        <li><a href="news.html">الأخبار والتحديثات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>معلومات الاتصال</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>شارع الاستدامة 123،<br>المدينة الخضراء، 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@rifdevelopment.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>النشرة الإخبارية</h3>
+                    <p>اشترك في نشرتنا الإخبارية لتلقي التحديثات حول مشاريعنا وتأثيرنا.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني" required>
+                        <button type="submit">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 مؤسسة ريف للتنمية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Language switcher
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Project filtering functionality
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', filterProjects);
+        });
+
+        document.querySelector('.search-box input').addEventListener('input', filterProjects);
+
+        function filterProjects() {
+            const region = document.getElementById('region').value;
+            const sector = document.getElementById('sector').value;
+            const status = document.getElementById('status').value;
+            const searchText = document.querySelector('.search-box input').value.toLowerCase();
+            
+            document.querySelectorAll('.project-card').forEach(card => {
+                const cardRegion = card.querySelector('.project-region').textContent.includes(getRegionText(region));
+                const cardSector = card.querySelector('.project-meta span:last-child').textContent.includes(getSectorText(sector));
+                const cardStatus = card.querySelector('.project-status').classList.contains(getStatusClass(status));
+                const cardTitle = card.querySelector('h3').textContent.toLowerCase().includes(searchText);
+                
+                if ((region === 'all' || cardRegion) && 
+                    (sector === 'all' || cardSector) && 
+                    (status === 'all' || cardStatus) && 
+                    cardTitle) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function getRegionText(region) {
+            const regions = {
+                'north': 'الشمالية',
+                'south': 'الجنوبية', 
+                'east': 'الشرقية',
+                'west': 'الغربية'
+            };
+            return regions[region] || '';
+        }
+
+        function getSectorText(sector) {
+            const sectors = {
+                'education': 'التعليم',
+                'health': 'الصحة',
+                'water': 'المياه',
+                'agriculture': 'الزراعة',
+                'economic': 'التمكين الاقتصادي'
+            };
+            return sectors[sector] || '';
+        }
+
+        function getStatusClass(status) {
+            const statuses = {
+                'active': '',
+                'completed': 'completed',
+                'planning': 'planning'
+            };
+            return statuses[status] || '';
+        }
+
+        // Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sector Distribution Chart
+            const sectorCtx = document.getElementById('sectorChart').getContext('2d');
+            const sectorChart = new Chart(sectorCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['التعليم', 'الصحة', 'المياه', 'الزراعة', 'التمكين الاقتصادي'],
+                    datasets: [{
+                        data: [30, 20, 25, 15, 10],
+                        backgroundColor: [
+                            '#4a9f6a',
+                            '#2d6a4f',
+                            '#8bc34a',
+                            '#cddc39',
+                            '#afb42b'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            rtl: true
+                        }
+                    }
+                }
+            });
+
+            // Progress Chart
+            const progressCtx = document.getElementById('progressChart').getContext('2d');
+            const progressChart = new Chart(progressCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['مياه نظيفة', 'التعليم', 'الزراعة', 'التمكين'],
+                    datasets: [{
+                        label: 'نسبة الإنجاز',
+                        data: [100, 75, 60, 25],
+                        backgroundColor: '#4a9f6a',
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        };
+        
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(30px)";
+            element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Initial check
+        fadeInOnScroll();
+    </script>
+</body>
+</html>
